@@ -1,0 +1,30 @@
+﻿笔记：
+逗号分隔属性名
+
+<script type="text/javascript">
+		const numbers = ['one','tow','three','four'];
+		const [one,,three] = numbers;
+		console.log(one,three);
+	</script>
+…others 剩余元素组成新数组，…others只能放在数组最后
+
+<script type="text/javascript">
+		const numbers = ['one','tow','three','four'];
+		const [one,...others] = numbers;
+		console.log(one,others);
+	</script>
+数组中定义默认参数
+
+<script type="text/javascript">
+		const numbers = ['one','tow','three','four'];
+		const [one,two,three,four,five='PHP'] = numbers;
+		console.log(one,two,three,four,five);
+	</script>
+交换变量值
+
+<script type="text/javascript">
+		let a = 10;
+		let b = 15;
+		[a,b] =[b,a];
+		console.log(a,b)
+	</script>

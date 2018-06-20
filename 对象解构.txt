@@ -1,0 +1,83 @@
+笔记：
+对象结构能够帮助我们更为简便的提取对象中的属性，对其重命名，以及赋予默认值。
+({name,age} = Tom); 小括号包裹起来。
+
+<script type="text/javascript">
+		const Tom = {
+			name:'Tom Jones',
+			age:25,
+			family:{
+				mother:'Norah Jones',
+				father:'Richard Jones',
+				brother:'Howard Jones'
+			},
+		}
+
+		let name ='';
+		({name,age} = Tom);
+
+		console.log(name);
+		console.log(age);
+	</script>
+嵌套，重命名
+
+<script type="text/javascript">
+		const Tom = {
+			name:'Tom Jones',
+			age:25,
+			family:{
+				mother:'Norah Jones',
+				father:'Richard Jones',
+				brother:'Howard Jones'
+			},
+		}
+
+		const father = 'Dad';
+		const{father:f,mother:m,brother:b} =Tom.family;
+
+		console.log(f);
+		console.log(m);
+		console.log(b);
+	</script>
+未定义的属性初始值为undefined的时候才会使用默认值
+
+<script type="text/javascript">
+		const Tom = {
+			name:'Tom Jones',
+			age:25,
+			family:{
+				mother:'Norah Jones',
+				father:'Richard Jones',
+				brother:'Howard Jones',
+				sister:undefined
+			},
+		}
+
+		const father = 'Dad';
+		const{father:f,mother:m,brother:b,sister='have no sister'} =Tom.family;
+
+		console.log(sister);
+	</script>
+一个个属性值注释掉看看初始值
+
+<div class="container"></div>
+	<script type="text/javascript">
+		function appendChildDiv(options ={}){
+			const {parent = 'body',width = '100px',height = '80px',
+			backgroundColor = 'pink'} =options;
+			const div = document.createElement('div');
+			div.style.width = width;
+			div.style.height = height;
+			div.style.backgroundColor = backgroundColor;
+
+			document.querySelector(parent).appendChild(div);
+		}
+
+		appendChildDiv({
+			parent:'.container',
+			width:'200px',
+			// height:'150px',
+			// backgroundColor:'yellow'
+		})
+
+	</script>

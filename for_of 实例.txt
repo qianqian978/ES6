@@ -1,0 +1,67 @@
+﻿笔记：
+For of循环可以用于数组、字符串、map、NodeList等，目前还不支持对象。
+.entries() 取到索引和值
+console.log(fruit[1]); 当前元素的值
+
+<script type="text/javascript">
+		const fruits = ['Apple','Banana','Orange','Mango'];
+		for(let fruit of fruits.entries()){
+			console.log(fruit);
+		}
+	</script>
+用结构的语法[index,fruit]
+
+<script type="text/javascript">
+		const fruits = ['Apple','Banana','Orange','Mango'];
+		for(let [index,fruit] of fruits.entries()){
+			console.log(`${fruit} ranks ${index +1} in my favorite fruits`);
+		}
+	</script>
+用于数组，求和
+
+<script type="text/javascript">
+		function sum(){
+			let total =0;
+			for(let num of arguments){
+				total= total +num;
+			}
+			console.log(total);
+			return total;
+		}
+		sum(10,20,300,434,12,33);
+	</script>
+用于字符串循环
+
+<script type="text/javascript">
+		let name ='Veg.kim';
+		for(let char of name){
+			console.log(char);
+		}
+	</script>
+用于li标签循环，click切换样式
+
+<head>
+	<title>Var-Let-Const</title>
+	<style type="text/css">
+	.highlight{
+		padding:2px 5px;
+		background: #00adb5;
+		color:white;
+	}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>Go to Store</li>
+		<li>Watch TV</li>
+		<li>Go shopping</li>
+	</ul>
+	<script type="text/javascript">
+		const lis = document.querySelectorAll('li');
+		for(let li of lis){
+			li.addEventListener('click',function(){
+				this.classList.toggle('highlight');
+			})
+		}
+	</script>
+</body>

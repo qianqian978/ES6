@@ -1,0 +1,24 @@
+﻿<script type="text/javascript">
+		const id = '15212619000504093X';
+		const fan = 'I love vegetables.';
+		const heading = `${'='.repeat(5)} ${fan} ${'='.repeat(5)}`;
+
+		console.log(heading);//美化字符串
+
+		//.startsWith()
+		//id.startsWith('15')
+		//id.startsWith('1900',6)
+		//大小写敏感fan.startsWith('I')
+
+		//.endsWith()
+		//id.endsWith('X')
+		//fan.endsWith('love',6)
+
+		//.includes()
+		//以前的用法fan.indexOf('vegetables')!= -1
+		//fan.includes('vegetables')
+		//fan.includes('veg',10)
+
+		//.repeat()重复
+		//'ha'.repeat(5)
+	</script>
