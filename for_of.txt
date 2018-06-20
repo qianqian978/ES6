@@ -1,0 +1,50 @@
+﻿笔记：
+最初的for循环，比较繁琐
+
+<script type="text/javascript">
+		const fruits = ['Apple','Banana','Orange','Mango'];
+
+		for(let i=0;i<fruits.length;i++){
+			console.log(fruits[i]);
+		}
+	</script>
+forEach循环，不能终止或者跳过
+
+<script type="text/javascript">
+		const fruits = ['Apple','Banana','Orange','Mango'];
+
+		fruits.forEach(fruit =>{
+			// if(fruit ==='Orange'){
+			// 	break;
+			// }
+			console.log(fruit);
+		})
+	</script>
+For in 遍历的是可枚举属性
+
+<script type="text/javascript">
+		Array.prototype.first = function(){
+			return this[0];
+		}
+		const fruits = ['Apple','Banana','Orange','Mango'];
+		fruits.describe = 'My favorite fruits';
+
+		for(let index in fruits){
+			console.log(fruits[index]);
+		}
+	</script>
+最好的方法 FOR OF，解决了以上方法的缺陷
+<script type="text/javascript">
+		Array.prototype.first = function(){
+			return this[0];
+		}
+		const fruits = ['Apple','Banana','Orange','Mango'];
+		fruits.describe = 'My favorite fruits';
+
+		for(let fruit of fruits){
+			if(fruit ==='Orange'){
+				continue;
+			}
+			console.log(fruit);
+		}
+	</script>
